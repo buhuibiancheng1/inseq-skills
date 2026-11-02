@@ -6,6 +6,7 @@
 | --- | --- |
 | 提取视频原文 | `inseq_extract_copy` |
 | 分析账号主页 | `inseq_analyze_account` |
+| 展示账号、研究作品和视频预览卡片 | `inseq_preview_results` |
 | 选择改写依据并改写 | `inseq_rewrite_copy` |
 | 查找热点与选题 | `inseq_find_topics`（当前连接器提供时），否则检索 01「机会雷达」 |
 | 定位其他技能 | `inseq_search_skills`、`inseq_get_skill`、`inseq_run_skill` |
