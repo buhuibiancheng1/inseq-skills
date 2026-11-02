@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "inseq": {
+      "type": "http",
+      "url": "https://inseq.zhujunyue.com/mcp"
+    }
+  }
+}

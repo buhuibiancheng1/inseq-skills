@@ -1,0 +1,12 @@
+interface:
+  display_name: "INSEQ 自媒体创作"
+  short_description: "通过云端服务提取视频文案、分析账号、研究选题并按画像创作内容"
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "inseq"
+      description: "INSEQ 云端内容服务"
+      transport: "streamable_http"
+      url: "https://inseq.zhujunyue.com/mcp"
+policy:
+  allow_implicit_invocation: true
