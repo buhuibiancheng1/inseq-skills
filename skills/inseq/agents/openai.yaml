@@ -1,6 +1,6 @@
 interface:
   display_name: "INSEQ 自媒体创作"
-  short_description: "通过云端服务提取视频文案、分析账号、研究选题并按画像创作内容"
+  short_description: "接入完整自媒体能力：发现、策划、图文音视频制作、复盘和画像管理"
 dependencies:
   tools:
     - type: "mcp"
