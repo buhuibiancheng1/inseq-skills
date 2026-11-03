@@ -1,6 +1,6 @@
 {
   "name": "@inseq/cli",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "INSEQ public API client and WorkBuddy CLI connector",
   "type": "module",
   "bin": {
@@ -12,6 +12,7 @@
   "files": [
     "client.mjs",
     "cli.mjs",
+    "cli-input.mjs",
     "LICENSE",
     "video-confirmation.mjs",
     "workbuddy-confirmation.mjs"

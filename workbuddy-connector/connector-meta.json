@@ -7,7 +7,7 @@
   "description_en": "Extract video copy, analyze accounts, research topics and save creative results to your INSEQ account.",
   "source": "inseq",
   "type": "cli",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "minWorkbuddyVersion": "5.0.0",
   "examples_zh": [
     "使用 INSEQ 分析这个账号",

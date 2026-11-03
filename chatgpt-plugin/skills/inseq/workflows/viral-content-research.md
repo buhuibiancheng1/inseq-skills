@@ -1,6 +1,14 @@
 # 热点与作品研究
 
-“找热点”“找同行作品”“找选题”对应 01「机会雷达」。连接器提供 `inseq_find_topics` 时直接使用；尚无该入口时用 `inseq_search_skills` 检索“机会雷达”，根据实际公开参数调用。沿用已知行业或观众问题及目标平台，只询问仍缺少的范围；直接入口支持无项目研究，不先创建画像。旧入口缺少必要项目上下文时说明具体缺项，不伪造项目或宣称新入口已上线。
+“找热点”“找同行作品”“找选题”和“低粉爆款”对应 01「机会雷达」（`opportunity-research`）。先读取其公开定义，通过 `inseq_run_skill` 调用；没有明确选择已有项目时省略 `project_id`，新任务 `request_id` 可省略。沿用已知行业或观众问题及目标平台，只询问仍缺少的范围，不要求自己的主页、不创建临时画像。连接器提供 `inseq_find_topics` 时可用于近期选题；低粉、同城等指定模式仍使用 `inseq_run_skill`。若实际连接的旧服务仍把项目设为必填，明确说明需要更新服务，不能自造项目或擅自换成公开网络案例。
+
+低粉使用 `mode=low_fan`、`platforms=["douyin"]`。例如“AI 行业抖音低粉爆款”提交：
+
+```json
+{"request":{"skill_id":"opportunity-research","input":{"topic":"AI 行业","search_term":"AI","platforms":["douyin"],"mode":"low_fan"}}}
+```
+
+其他模式为 `industry`（行业）、`local`（同城，填写 city）、`content_gap`（内容机会）、`deep_research`（深度研究）。行业搜索不限作品时间时使用 `recent_only=false`；原生低粉榜只覆盖平台实际提供的榜期，不承诺任意历史榜单。查询和卡片沿用服务返回的 `project_id` 与 `request_id`，不再创建项目。
 
 使用服务实际返回的候选、作品链接、发布时间及数据来源。未经日期和平台证据支持，不能把旧作品或其他平台样本称为目标平台的近期热点，也不能把单条高互动当作全平台趋势。
 
