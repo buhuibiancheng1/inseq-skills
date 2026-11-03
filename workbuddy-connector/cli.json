@@ -1,0 +1,36 @@
+{
+  "init": {
+    "darwin": "npm install -g https://inseq.zhujunyue.com/downloads/inseq-cli-0.5.0.tgz",
+    "linux": "npm install -g https://inseq.zhujunyue.com/downloads/inseq-cli-0.5.0.tgz",
+    "win32": "npm install -g https://inseq.zhujunyue.com/downloads/inseq-cli-0.5.0.tgz"
+  },
+  "auth": {
+    "darwin": "inseq auth login --host workbuddy --no-browser",
+    "linux": "inseq auth login --host workbuddy --no-browser",
+    "win32": "inseq.cmd auth login --host workbuddy --no-browser"
+  },
+  "unAuth": {
+    "darwin": "inseq auth logout --host workbuddy",
+    "linux": "inseq auth logout --host workbuddy",
+    "win32": "inseq.cmd auth logout --host workbuddy"
+  },
+  "status": {
+    "darwin": "inseq auth status --host workbuddy",
+    "linux": "inseq auth status --host workbuddy",
+    "win32": "inseq.cmd auth status --host workbuddy"
+  },
+  "runtime": {
+    "type": "node",
+    "version": ">=22.19.0"
+  },
+  "statusMatchJson": {
+    "authenticated": true
+  },
+  "authWaitForExit": true,
+  "authUrlDomain": "inseq.zhujunyue.com",
+  "authDeviceFlow": {
+    "uriPattern": "(https://inseq\\.zhujunyue\\.com/oauth/device[^\\s]*)",
+    "defaultExpiresInSeconds": 600,
+    "codeEmbeddedInUri": true
+  }
+}

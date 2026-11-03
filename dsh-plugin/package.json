@@ -1,0 +1,30 @@
+{
+  "name": "@inseq/dsh-plugin",
+  "version": "0.5.0",
+  "description": "INSEQ 自媒体技能与云端服务",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.mjs",
+    "cordis.patch.yml",
+    "locale",
+    "icon.svg",
+    "skills",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "license": "MIT"
+}

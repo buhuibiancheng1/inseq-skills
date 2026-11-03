@@ -1,0 +1,12 @@
+{
+  "name": "@inseq/cli",
+  "version": "0.5.0",
+  "description": "INSEQ public API client and WorkBuddy CLI connector",
+  "type": "module",
+  "bin": {"inseq": "cli.mjs"},
+  "exports": {".": "./client.mjs"},
+  "files": ["client.mjs", "cli.mjs", "LICENSE"],
+  "engines": {"node": ">=22.19.0"},
+  "scripts": {"test": "node --test test/*.test.mjs"},
+  "license": "MIT"
+}

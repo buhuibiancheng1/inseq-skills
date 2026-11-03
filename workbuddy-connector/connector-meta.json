@@ -1,0 +1,20 @@
+{
+  "name": "INSEQ",
+  "name_zh": "INSEQ",
+  "name_en": "INSEQ",
+  "description": "Research, analyze and create content with INSEQ.",
+  "description_zh": "提取视频文案、分析账号、研究选题，创作内容并保存到你的 INSEQ 账号。",
+  "description_en": "Extract video copy, analyze accounts, research topics and save creative results to your INSEQ account.",
+  "source": "inseq",
+  "type": "cli",
+  "version": "0.5.0",
+  "minWorkbuddyVersion": "5.0.0",
+  "examples_zh": [
+    "使用 INSEQ 分析这个账号",
+    "读取我的 INSEQ 画像并创作一条脚本"
+  ],
+  "examples_en": [
+    "Analyze this account with INSEQ",
+    "Read my INSEQ profile and create a script"
+  ]
+}

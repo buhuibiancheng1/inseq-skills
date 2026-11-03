@@ -1,44 +1,20 @@
 # INSEQ Skills
 
-在豆包工作或其他支持 Skill 与远程 MCP 的 Agent 中，通过一个总控 Skill 使用 INSEQ 原有全部 82 项能力：76 个用户入口、6 项内部协作能力。覆盖发现、策划、制作、复盘、画像及资料管理，无需另装 INSEQ 客户端。
+在你的 Agent 中使用 INSEQ 的 82 项能力：76 个用户入口、6 项内部能力。涵盖内容研究、策划、制作、复盘与画像，成果保存到同一 INSEQ 账号。
 
-[查看完整功能目录](skills/inseq/references/catalog.md)。以下三个任务仅用于首次验收，不限制功能范围。各项实际可用状态以账号服务与当前宿主能力为准，目录存在不代表所有业务已完成真实验收。
-
-## 一句话安装
-
-在支持从 GitHub 创建技能的宿主中发送：
-
-```text
-新建技能 安装：https://github.com/buhuibiancheng1/inseq-skills
-```
-
-请安装本仓库的 `skills/inseq/` 完整目录。首次安装后连接 INSEQ MCP，由用户在 INSEQ 网页登录并授权。已有有效连接直接复用。
-
-| 连接项 | 内容 |
+| 平台 | 安装 |
 | --- | --- |
-| 名称 | INSEQ |
-| 类型 | HTTP / Streamable HTTP |
-| 地址 | https://inseq.zhujunyue.com/mcp |
-| 登录 | 网页 OAuth 授权 |
-| 自定义 Headers | 留空 |
+| DeepSeek Harness | [原生插件](https://inseq.zhujunyue.com/install/deepseek-harness.md) |
+| WorkBuddy | [CLI + Skill](https://inseq.zhujunyue.com/install/workbuddy.md) |
+| 豆包工作 | [安装教程](https://inseq.zhujunyue.com/tutorials/doubao.html) |
+| ChatGPT | [连接 INSEQ](https://inseq.zhujunyue.com/install/chatgpt.md) |
 
-Skill 安装与 MCP 连接是两个步骤。宿主不能自动添加连接器时，用户手动添加一次即可；不要索取密码、Token 或 API Key。具体步骤见[安装说明](skills/inseq/references/installation.md)和[授权说明](skills/inseq/references/authentication.md)。`mcp.json` 是配置示例，是否自动读取及字段格式以宿主实际支持为准。
+首次使用时登录 INSEQ 并同意连接，之后直接在当前对话提出需求。
 
-## 正常聊天即可
+- 帮我提取这个视频的文案。
+- 分析这个账号，并给出新的选题方向。
+- 结合我的画像，创作三条口播脚本。
 
-- “帮我提取这个抖音视频的文案。”
-- “分析一下这个抖音账号有什么问题。”
-- “帮我做三条适合这个账号的口播脚本。”
-- “提取这个视频的文案，再分析一下为什么表现好。”
+[完整功能目录](skills/inseq/references/catalog.md) · [宿主知识与任务资料](skills/inseq/references/host-knowledge.md)
 
-无需每次输入 `/inseq`。支持手动指定技能的宿主也可以选择 INSEQ；斜杠命令是否可用取决于宿主。自动发现由宿主决定，安装后应分别验证自然语言和手动指定两种方式。不能仅凭“已安装”的文字回复认定接入成功。
-
-画像选择、可选业务资料、视频生成报价确认、完整结果和续改都在当前 Agent 对话中完成。长期账号、产品、服务知识由用户的宿主管理；INSEQ 只接收本次任务必要资料并保存任务记录和成果，不自动建立云端长期知识库。宿主不支持持久记忆时，仅沿用当前对话，不声称已长期保存。详见[宿主知识](skills/inseq/references/host-knowledge.md)。正文直接交付，媒体使用实际预览、附件或本次文件链接。
-
-## 首次验证
-
-先发送：“请通过 INSEQ 检查连接，只读查询项目和可用服务，不采集、不生成。”
-
-确认工具实际调用成功后，由用户选择真实素材验证上述三个场景。登录成功、能力可用或素材准备完成，不代表业务结果已经通过验收。原视频分析需要当前 Agent 实际读取声画；缺少能力时如实说明。每次视频生成都需先展示本次预计积分及规格，并取得用户本次明确同意。
-
-本仓库只包含公开接入说明、任务路由与交付要求。服务实现不在此仓库中。仓库发布不代表已进入任何宿主的官方技能市场，也不代表已完成各宿主的真实业务验收。
+各平台安装文档包含更新和卸载方法。长期知识由宿主管理，INSEQ 保存本次任务输入、运行记录及成果。每次视频生成先展示本次预计积分和规格，再由用户本人确认。
