@@ -101,7 +101,7 @@
 | 97 | 产物管理 | `asset-manager` | 当前项目素材或成果、操作要求 |
 | 98 | 批量处理 | `batch-process` | 明确的一组素材与处理要求 |
 | 99 | 账号查询 | `skill-my-account` | 渠道与账号查询条件 |
-| 100 | 画像构建 | `skill-profile-builder` | 名称、渠道、主页链接及可选绑定业务资料 |
+| 100 | 画像构建 | `skill-profile-builder` | 名称、渠道、主页链接及本次可选业务资料 |
 | 101 | 画像管理 | `skill-profile-manager` | 指定画像与查看或修改要求 |
 | 102 | 模板库 | `template-library` | 当前项目模板及管理要求 |
 
