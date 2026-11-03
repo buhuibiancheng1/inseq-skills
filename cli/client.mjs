@@ -42,9 +42,10 @@ export class FileStore {
     await rename(temp, target);
   }
   async delete(key) { await unlink(this.path(key)).catch(e => { if (e.code !== 'ENOENT') throw e; }); }
-  async exclusive(work, signal) {
+  async exclusive(work, signal, name='auth') {
     await this.prepare();
-    const path = join(this.root, 'auth.lock');
+    if(!/^[a-z-]+$/.test(name))throw new Error('Invalid lock name');
+    const path = join(this.root, name+'.lock');
     for (let i = 0; ; i++) {
       signal?.throwIfAborted();
       try { await writeFile(path, JSON.stringify({pid: process.pid}), {flag: 'wx', mode: 0o600}); break; }
@@ -218,6 +219,7 @@ export class Client {
   async catalog(signal) { return this.authenticated('/agent/tools', {signal}); }
   async call(name, args = {}, signal, resumeId) {
     if (!/^inseq_[a-z_]+$/.test(name)) throw new InseqError('INVALID_TOOL','工具名称无效');
+    if(name==='inseq_confirm_video'&&args.decision?.decision==='allow')throw new InseqError('HUMAN_CONFIRMATION_REQUIRED','请使用当前宿主的本次报价确认入口');
     const id = resumeId || randomUUID(), key = 'task-' + id;
     let task = resumeId ? await this.store.get(key) : {name,args,phase:'awaiting_auth',created_at:Date.now(),origin:this.origin};
     if (!task || task.name !== name || task.origin !== this.origin) throw new InseqError('TASK_NOT_FOUND','未找到原始操作');

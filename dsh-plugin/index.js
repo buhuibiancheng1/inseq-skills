@@ -1,6 +1,7 @@
 import {readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {Client, InseqError} from './client.mjs';
+import {confirmDeepseek} from './video-confirmation.mjs';
 
 export const name = 'inseq';
 export const inject = ['tools', 'skills', 'credentials'];
@@ -26,7 +27,9 @@ export async function apply(ctx) {
   ctx.effect(()=>ctx.skills.register({name:'inseq',description:'使用 INSEQ 提取视频文案、分析账号、研究选题、创作并保存成果。',
     content:source.replace(/^---\n[\s\S]*?\n---\n/,''),source:'bundled',path:skillPath+'SKILL.md',resourceBase:{kind:'directory',path:skillPath}}));
   ctx.effect(()=>ctx.tools.register({name:'inseq',description:'连接 INSEQ、读取公开工具定义、调用技能服务和保存成果。首次调用自动登录并继续。',
-    parameters:{action:{type:'string',required:true,enum:['tools','call','resume','status','logout']},
+    parameters:{action:{type:'string',required:true,enum:['tools','call','resume','status','logout','confirm_video']},
+      project_id:{type:'string',description:'confirm_video 时使用报价所属项目编号'},
+      request_id:{type:'string',description:'confirm_video 时使用本次报价编号；不能传入同意或确认结果'},
       tool:{type:'string',description:'call 时使用 tools 返回的准确工具名'},
       arguments_json:{type:'string',description:'call 时按照工具 schema 提供 JSON 对象'},
       continuation_id:{type:'string',description:'resume 时使用原回执编号'}},
@@ -38,6 +41,7 @@ export async function apply(ctx) {
         if(args.action==='status')return await client.status(exec.signal);
         if(args.action==='logout')return await client.logout(exec.signal);
         if(args.action==='resume')return await client.resume(args.continuation_id,exec.signal);
+        if(args.action==='confirm_video')return await confirmDeepseek(client,ctx,exec,args.project_id,args.request_id);
         if(args.action==='call')return await client.call(args.tool,JSON.parse(args.arguments_json||'{}'),exec.signal);
         throw new InseqError('INVALID_ACTION','操作无效');
       }catch(e){return e instanceof InseqError?e.toJSON():{error:'FAILED',message:'操作未完成，请检查参数或连接状态'};}

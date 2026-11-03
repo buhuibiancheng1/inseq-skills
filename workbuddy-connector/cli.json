@@ -1,8 +1,8 @@
 {
   "init": {
-    "darwin": "npm install -g https://inseq.zhujunyue.com/downloads/inseq-cli-0.5.0.tgz",
-    "linux": "npm install -g https://inseq.zhujunyue.com/downloads/inseq-cli-0.5.0.tgz",
-    "win32": "npm install -g https://inseq.zhujunyue.com/downloads/inseq-cli-0.5.0.tgz"
+    "darwin": "npm install -g https://inseq.zhujunyue.com/downloads/inseq-cli-0.5.1.tgz && inseq init",
+    "linux": "npm install -g https://inseq.zhujunyue.com/downloads/inseq-cli-0.5.1.tgz && inseq init",
+    "win32": "npm install -g https://inseq.zhujunyue.com/downloads/inseq-cli-0.5.1.tgz && inseq init"
   },
   "auth": {
     "darwin": "inseq auth login --host workbuddy --no-browser",
