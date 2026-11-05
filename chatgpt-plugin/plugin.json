@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "inseq",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "INSEQ 自媒体研究、创作与成果管理。"
 }

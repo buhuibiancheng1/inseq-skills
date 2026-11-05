@@ -1,6 +1,6 @@
 {
   "name": "@inseq/dsh-plugin",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "INSEQ 自媒体技能与云端服务",
   "type": "module",
   "exports": {

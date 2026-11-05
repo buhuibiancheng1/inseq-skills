@@ -23,8 +23,8 @@ const client=new Client({host,device,openDeviceBrowser,deferDevice:hook,notify:f
 }});
 try{
   let result;
-  if(args[0]==='--version') result={version:'0.5.2'};
-  else if(args[0]==='init') result=host==='workbuddy'?await installWorkbuddyHooks():{ready:true,version:'0.5.2'};
+  if(args[0]==='--version') result={version:'0.5.3'};
+  else if(args[0]==='init') result=host==='workbuddy'?await installWorkbuddyHooks():{ready:true,version:'0.5.3'};
   else if(hook){
     await assertWorkbuddyHookParent();
     let json='';for await(const chunk of process.stdin){json+=chunk;if(json.length>1000000)throw new Error('Hook too large');}
